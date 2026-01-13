@@ -1,12 +1,33 @@
 package com.Application.HospitalManagementSys.Controller;
 
+import com.Application.HospitalManagementSys.DataTransferObject.PatientDTO;
 import com.Application.HospitalManagementSys.Repo.PatientRepository;
+import com.Application.HospitalManagementSys.Service.PatService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/api/patient")
 public class PatientController {
 
     @Autowired
-    private PatientRepository patientRepository;
+    private PatService patService;
+
+    @PostMapping("create")
+    public ResponseEntity<PatientDTO> createPatient(@Valid @RequestBody PatientDTO patientDTO){
+        return new ResponseEntity<>(patService.insertPatient(patientDTO), HttpStatus.CREATED);
+    }
+
+    @GetMapping("patients")
+    public ResponseEntity<List<PatientDTO>> getAllPatients(){
+        List<PatientDTO> patientDTOs = patService.getAllPatients();
+        return ResponseEntity.ok(patientDTOs);
+    }
+
+
 }

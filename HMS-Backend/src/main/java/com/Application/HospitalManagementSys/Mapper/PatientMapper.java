@@ -22,7 +22,7 @@ public class PatientMapper {
         return patient;
     }
 
-    public static PatientDTO mapToPatient(Patient patient) {
+    public static PatientDTO mapToPatientDTO(Patient patient) {
 
         PatientDTO patientDTO = new PatientDTO(
                 patient.getPatientId(),
