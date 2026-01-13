@@ -1,0 +1,54 @@
+package com.Application.HospitalManagementSys.Entity;
+
+import com.Application.HospitalManagementSys.ENUM.Gender;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "Patients")
+public class Patient {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "patient_id")
+    private Long patientId;
+
+    // ---------------- Personal Details ----------------
+
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "contact_number", nullable = false)
+    private String contactNumber;
+
+    @Column(name = "age")
+    private String age;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private Gender gender;
+
+    @Column(name = "blood_group")
+    private String bloodGroup;
+
+    // ---------------- Medical Details ----------------
+
+    @Column(name = "dose")
+    private String dose;
+
+    @Column(name = "prescription")
+    private String prescription;
+
+    @Column(name = "urgency")
+    private String urgency;
+
+    // ---------------- Billing ----------------
+
+    @Column(name = "fees")
+    private Double fees;
+}
