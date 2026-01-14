@@ -4,7 +4,7 @@ import com.Application.HospitalManagementSys.DataTransferObject.AppointmentDTO;
 import com.Application.HospitalManagementSys.Entity.DocLogin.Appointment;
 
 public class AppointmentMapper {
-    public static Appointment mapToAppointmentDTO(AppointmentDTO appointmentDTO) {
+    public static Appointment mapToAppointment(AppointmentDTO appointmentDTO) {
         Appointment appointment = new Appointment(
                 appointmentDTO.getId(),
                 appointmentDTO.getName(),
@@ -15,7 +15,7 @@ public class AppointmentMapper {
         return appointment;
     }
 
-    public static AppointmentDTO mapToAppointment(Appointment appointment) {
+    public static AppointmentDTO mapToAppointmentDTO(Appointment appointment) {
         AppointmentDTO appointmentDTO = new AppointmentDTO(
                 appointment.getId(),
                 appointment.getName(),

@@ -4,7 +4,7 @@ import com.Application.HospitalManagementSys.DataTransferObject.MedicineDTO;
 import com.Application.HospitalManagementSys.Entity.DocLogin.Medicine;
 
 public class MedicineMapper {
-    public static Medicine mapToMedicineDTO(MedicineDTO medicineDTO) {
+    public static Medicine mapToMedicine(MedicineDTO medicineDTO) {
 
         Medicine medicine = new Medicine(
                 medicineDTO.getId(),
@@ -14,7 +14,7 @@ public class MedicineMapper {
         return medicine;
     }
 
-    public static MedicineDTO mapToMedicine(Medicine medicine) {
+    public static MedicineDTO mapToMedicineDTO(Medicine medicine) {
 
         MedicineDTO medicineDTO = new MedicineDTO(
                 medicine.getId(),

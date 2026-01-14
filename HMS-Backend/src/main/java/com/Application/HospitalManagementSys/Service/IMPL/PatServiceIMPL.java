@@ -14,7 +14,7 @@ import java.util.List;
 public class PatServiceIMPL implements PatService {
 
     @Autowired
-    PatientRepository patientRepository;
+    private PatientRepository patientRepository;
 
     @Override
     public PatientDTO insertPatient(PatientDTO patientDTO) {
