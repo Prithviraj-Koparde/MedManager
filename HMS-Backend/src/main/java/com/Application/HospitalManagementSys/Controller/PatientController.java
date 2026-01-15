@@ -23,7 +23,7 @@ public class PatientController {
         return new ResponseEntity<>(patService.insertPatient(patientDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping("patients")
+    @GetMapping
     public ResponseEntity<List<PatientDTO>> getAllPatients(){
         List<PatientDTO> patientDTOs = patService.getAllPatients();
         return ResponseEntity.ok(patientDTOs);
