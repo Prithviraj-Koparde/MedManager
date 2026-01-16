@@ -4,7 +4,7 @@ export class Patient {
     contactNumber: string = "";
     age: string = "";
     gender: string = "";
-    bloodGrp: string = "";
+    bloodGroup: string = "";
     dose: string = "";
     prescription: string = "";
     urgency: string = "";

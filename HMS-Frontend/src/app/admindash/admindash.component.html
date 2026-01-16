@@ -1,29 +1,86 @@
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>ContactNumber</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Blood</th>
-            <th>Dose</th>
-            <th>Prescription</th>
-            <th>Urgency</th>
-        </tr>
-    </thead>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+  <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+    🏥 <span class="ms-2">MedManager</span>
+  </a>
 
-    <tbody>
-        <tr *ngFor="let patient of patients">
-            <td>{{patient.id}}</td>
-            <td>{{patient.name}}</td>
-            <td>{{patient.contactNumber}}</td>
-            <td>{{patient.age}}</td>
-            <td>{{patient.gender}}</td>
-            <td>{{patient.bloodGrp}}</td>
-            <td>{{patient.dose}}</td>
-            <td>{{patient.prescription}}</td>
-            <td>{{patient.urgency}}</td>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link active fw-semibold" routerLinkActive="active" routerLink="/appointment-dash">
+          📅 Appointments
+        </a>
+      </li>
+    </ul>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-light">Admin</button>
+      <a routerLink="/home" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<!-- DASHBOARD CONTENT -->
+<div class="container-fluid px-4 mt-4">
+
+  <!-- Admin Dashboard Heading -->
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Admin Dashboard</h2>
+    <p class="text-muted fs-6">
+      Manage patient queue and monitor hospital operations
+    </p>
+    <hr class="w-50 mx-auto">
+  </div>
+
+  <!-- Table Heading -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="fw-semibold text-secondary">
+      🧾 Current Patient List
+    </h4>
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-bordered table-striped table-hover align-middle mb-0">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Blood</th>
+          <th>Dose</th>
+          <th>Prescription</th>
+          <th>Urgency</th>
         </tr>
-    </tbody>
-</table>
+      </thead>
+
+      <tbody class="text-center">
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.id }}</td>
+          <td class="fw-semibold">{{ patient.name }}</td>
+          <td>{{ patient.contactNumber }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.bloodGroup }}</td>
+          <td>{{ patient.dose }}</td>
+          <td>{{ patient.prescription }}</td>
+          <td>
+            <span class="badge" [ngClass]="{
+                'bg-danger': patient.urgency === 'HIGH',
+                'bg-warning text-dark': patient.urgency === 'MEDIUM',
+                'bg-success': patient.urgency === 'LOW'
+              }">
+              {{ patient.urgency }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

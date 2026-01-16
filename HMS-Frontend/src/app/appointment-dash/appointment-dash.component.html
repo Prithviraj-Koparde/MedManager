@@ -1,0 +1,72 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+  <a class="navbar-brand fw-bold d-flex align-items-center" routerLinkActive="active" routerLink="/admin-dash">
+    🏥 <span class="ms-2">MedManager</span>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link fw-semibold" routerLink="/admin-dash" routerLinkActive="active">
+          🏠 Dashboard
+        </a>
+      </li>
+    </ul>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-light">Admin</button>
+      <a routerLink="/home" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<!-- DASHBOARD CONTENT -->
+<div class="container-fluid px-4 mt-4">
+
+  <!-- Admin Dashboard Heading -->
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Appointment Dashboard</h2>
+    <p class="text-muted fs-6">
+      Manage patient appointment and monitor appointment operations
+    </p>
+    <hr class="w-50 mx-auto">
+  </div>
+
+  <div class="container-fluid px-5 mt-4">
+
+    <!-- Section Title -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="fw-semibold text-secondary">
+        📅 Appointment List
+      </h4>
+    </div>
+
+    <!-- Responsive Table -->
+    <div class="table-responsive shadow-sm rounded">
+      <table class="table table-bordered table-striped table-hover align-middle mb-0">
+        <thead class="table-dark text-center">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Symptoms</th>
+            <th>Contact Number</th>
+          </tr>
+        </thead>
+
+        <tbody class="text-center">
+          <tr *ngFor="let appointment of appointments">
+            <td>{{ appointment.id }}</td>
+            <td class="fw-semibold">{{ appointment.name }}</td>
+            <td>{{ appointment.age }}</td>
+            <td>{{ appointment.symptoms }}</td>
+            <td>{{ appointment.contactNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
