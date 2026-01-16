@@ -1,6 +1,7 @@
 package com.Application.HospitalManagementSys.Entity;
 
 import com.Application.HospitalManagementSys.ENUM.Gender;
+import com.Application.HospitalManagementSys.ENUM.Urgency;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,8 +45,9 @@ public class Patient {
     @Column(name = "prescription")
     private String prescription;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "urgency")
-    private String urgency;
+    private Urgency urgency;
 
     // ---------------- Billing ----------------
 

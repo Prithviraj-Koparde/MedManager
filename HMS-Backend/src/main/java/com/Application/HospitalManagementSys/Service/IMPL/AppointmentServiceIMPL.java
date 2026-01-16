@@ -8,6 +8,8 @@ import com.Application.HospitalManagementSys.Service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AppointmentServiceIMPL implements AppointmentService {
 
@@ -19,5 +21,10 @@ public class AppointmentServiceIMPL implements AppointmentService {
         Appointment appointment = AppointmentMapper.mapToAppointment(appointmentDTO);
         Appointment savedAppointment = appointmentRepository.save(appointment);
         return AppointmentMapper.mapToAppointmentDTO(savedAppointment);
+    }
+
+    @Override
+    public List<AppointmentDTO> getAllAppointments() {
+        return appointmentRepository.findAll().stream().map(AppointmentMapper::mapToAppointmentDTO).toList();
     }
 }
