@@ -1,0 +1,63 @@
+/* Page background */
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-size: 1rem;
+}
+
+.nav-link.active {
+  color: #ffc107 !important;
+}
+
+/* Card styling */
+.card {
+  border-radius: 8px;
+  border: none;
+}
+
+.card-header {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Form labels */
+.form-label {
+  font-weight: 500;
+  color: #212529;
+}
+
+/* Inputs & textarea */
+.form-control {
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #1e88e5;
+}
+
+/* Buttons */
+.btn-success {
+  min-width: 160px;
+  font-weight: 500;
+}
+
+.btn-secondary {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+/* Page spacing */
+.container {
+  padding-bottom: 40px;
+}

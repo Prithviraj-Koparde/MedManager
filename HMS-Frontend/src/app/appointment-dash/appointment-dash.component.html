@@ -60,6 +60,7 @@
             <th>Age</th>
             <th>Symptoms</th>
             <th>Contact Number</th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -70,6 +71,11 @@
             <td>{{ appointment.age }}</td>
             <td>{{ appointment.symptoms }}</td>
             <td>{{ appointment.contactNumber }}</td>
+            <td>
+              <button (click)=" delete(appointment.id)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

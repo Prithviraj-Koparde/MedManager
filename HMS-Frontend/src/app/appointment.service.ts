@@ -19,4 +19,8 @@ export class AppointmentService {
   saveNewAppointment(appointment: Appointment): Observable<Appointment> {
     return this.httpClient.post<Appointment>(`${this.baseUrl}/create`, appointment)
   }
+
+  deleteAppointmentById(id: number): Observable<object> {
+    return this.httpClient.delete(`${this.baseUrl}/${id}`)
+  }
 }

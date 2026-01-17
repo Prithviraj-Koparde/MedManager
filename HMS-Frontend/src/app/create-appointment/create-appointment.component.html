@@ -1,27 +1,27 @@
 <!-- Navbar (reuse your existing navbar component if you have one) -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
-  <a class="navbar-brand fw-bold d-flex align-items-center" routerLinkActive="active" routerLink="/admin-dash">
-    🏥 <span class="ms-2">MedManager</span>
-  </a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" routerLinkActive="active" routerLink="/admin-dash">
+        🏥 <span class="ms-2">MedManager</span>
+    </a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto">
-      <li class="nav-item">
-        <a class="nav-link fw-semibold" routerLink="/appointment-dash" routerLinkActive="active">
-            ↩ Go Back
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-semibold" routerLink="/admin-dash" routerLinkActive="active">
-          🏠 Dashboard
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link fw-semibold" routerLink="/appointment-dash" routerLinkActive="active">
+                    ↩ Go Back
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-semibold" routerLink="/admin-dash" routerLinkActive="active">
+                    🏠 Dashboard
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <!-- Page Content -->
@@ -32,7 +32,7 @@
             <!-- Card -->
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white text-center">
-                    <h4 class="mb-0">➕ Add Appointment</h4>
+                    <h4 class="mb-0">➕ Add New Appointment</h4>
                 </div>
 
                 <div class="card-body">
@@ -48,15 +48,15 @@
                         <!-- Age -->
                         <div class="mb-3">
                             <label class="form-label">Age</label>
-                            <input type="text" class="form-control" name="age" [(ngModel)]="appointment.age"
+                            <input type="number" class="form-control" name="age" [(ngModel)]="appointment.age"
                                 placeholder="Enter Age" required min="0">
                         </div>
 
                         <!-- Symptoms -->
                         <div class="mb-3">
                             <label class="form-label">Symptoms</label>
-                            <textarea type="text" class="form-control" rows="3" name="symptoms" [(ngModel)]="appointment.symptoms"
-                                placeholder="Enter Symptoms" required></textarea>
+                            <textarea type="text" class="form-control" rows="3" name="symptoms"
+                                [(ngModel)]="appointment.symptoms" placeholder="Enter Symptoms" required></textarea>
                         </div>
 
                         <!-- Contact Number -->

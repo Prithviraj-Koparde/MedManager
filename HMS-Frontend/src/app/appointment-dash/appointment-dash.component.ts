@@ -23,4 +23,11 @@ export class AppointmentDashComponent {
       console.log(this.appointments)
     })
   }
+
+  delete(id:number){
+    this.appointmentService.deleteAppointmentById(id).subscribe(data => {
+      console.log(data)
+      this.getAppointments()            //redirect to this.getAppointments() after delete otherwise still on same page
+    })
+  }
 }
