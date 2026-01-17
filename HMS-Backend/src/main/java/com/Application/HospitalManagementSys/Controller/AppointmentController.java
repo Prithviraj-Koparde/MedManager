@@ -18,13 +18,19 @@ public class AppointmentController {
     AppointmentServiceIMPL appointmentService;
 
     @PostMapping("create")
-    public ResponseEntity<AppointmentDTO> createAppointment (@Valid @RequestBody AppointmentDTO appointmentDTO){
+    public ResponseEntity<AppointmentDTO> createAppointment(@Valid @RequestBody AppointmentDTO appointmentDTO) {
         return new ResponseEntity<>(appointmentService.insertAppointment(appointmentDTO), HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<AppointmentDTO>> getAllAppointments (){
+    public ResponseEntity<List<AppointmentDTO>> getAllAppointments() {
         List<AppointmentDTO> appointmentDTOS = appointmentService.getAllAppointments();
         return ResponseEntity.ok(appointmentDTOS);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteAppointById(@PathVariable Long id) {
+        appointmentService.deleteAppointmentById(id);
+        return ResponseEntity.noContent().build();
     }
 }

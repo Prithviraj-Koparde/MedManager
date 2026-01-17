@@ -6,7 +6,9 @@ import com.Application.HospitalManagementSys.Mapper.AppointmentMapper;
 import com.Application.HospitalManagementSys.Repo.AppointmentRepository;
 import com.Application.HospitalManagementSys.Service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -26,5 +28,15 @@ public class AppointmentServiceIMPL implements AppointmentService {
     @Override
     public List<AppointmentDTO> getAllAppointments() {
         return appointmentRepository.findAll().stream().map(AppointmentMapper::mapToAppointmentDTO).toList();
+    }
+
+    @Override
+    public void deleteAppointmentById(Long id) {
+        if (!appointmentRepository.existsById(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Appointment not found with given id" + " " + id
+            );
+        }
+        appointmentRepository.deleteById(id);
     }
 }

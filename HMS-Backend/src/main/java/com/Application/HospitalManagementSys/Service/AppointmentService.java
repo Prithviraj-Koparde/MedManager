@@ -7,4 +7,5 @@ import java.util.List;
 public interface AppointmentService {
     AppointmentDTO insertAppointment (AppointmentDTO appointmentDTO);
     List<AppointmentDTO> getAllAppointments();
+    void deleteAppointmentById(Long id);
 }
