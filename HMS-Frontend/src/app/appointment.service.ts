@@ -15,4 +15,8 @@ export class AppointmentService {
   getAppointmentList(): Observable<Appointment[]> {
     return this.httpClient.get<Appointment[]>(`${this.baseUrl}`)
   }
+
+  saveNewAppointment(appointment: Appointment): Observable<Appointment> {
+    return this.httpClient.post<Appointment>(`${this.baseUrl}/create`, appointment)
+  }
 }
