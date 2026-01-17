@@ -21,11 +21,21 @@ public class Appointment {
     private String name;
 
     @Column(name = "age")
-    private String age;
+    private Integer age;
 
     @Column(name = "symptoms")
     private String symptoms;
 
     @Column(name = "contactNumber")
     private String contactNumber;
+
+    // cons without id
+    public Appointment(String name, Integer age, String symptoms, String contactNumber) {
+        this.name = name;
+        this.age = age;
+        this.symptoms = symptoms;
+        this.contactNumber = contactNumber;
+    }
+
+
 }

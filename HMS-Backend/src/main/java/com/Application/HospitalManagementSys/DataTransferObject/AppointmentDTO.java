@@ -18,7 +18,7 @@ public class AppointmentDTO {
 
     @NotNull(message = "Age is required!")
     @Min(value = 0, message = "Age cannot be negative!")
-    private String age;
+    private Integer age;
 
     @NotNull(message = "Symptoms are required!")
     private String symptoms;

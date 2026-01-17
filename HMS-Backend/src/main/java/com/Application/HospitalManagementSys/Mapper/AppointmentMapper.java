@@ -6,7 +6,6 @@ import com.Application.HospitalManagementSys.Entity.DocLogin.Appointment;
 public class AppointmentMapper {
     public static Appointment mapToAppointment(AppointmentDTO appointmentDTO) {
         Appointment appointment = new Appointment(
-                appointmentDTO.getId(),
                 appointmentDTO.getName(),
                 appointmentDTO.getAge(),
                 appointmentDTO.getSymptoms(),
