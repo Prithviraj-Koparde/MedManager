@@ -27,7 +27,7 @@ public class PatientDTO {
 
     @NotNull(message = "Contact number is required!")
     @Min(value = 0, message = "Age cannot be negative")
-    private String age;
+    private Integer age;
 
     @NotNull(message = "Gender is required!")
     private Gender gender;

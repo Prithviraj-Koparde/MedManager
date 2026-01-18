@@ -7,7 +7,6 @@ public class PatientMapper {
     public static Patient mapToPatient(PatientDTO patientDTO) {
 
         Patient patient = new Patient(
-                patientDTO.getId(),
                 patientDTO.getName(),
                 patientDTO.getContactNumber(),
                 patientDTO.getAge(),
