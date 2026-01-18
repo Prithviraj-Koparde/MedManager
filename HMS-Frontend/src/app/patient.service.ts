@@ -20,4 +20,8 @@ export class PatientService {
   deletePatientById(id: number): Observable<object> {
     return this.httpClient.delete(`${this.baseURL}/${id}`)
   }
+
+  saveNewPatient(patient: Patient): Observable<Patient> {
+    return this.httpClient.post<Patient>(`${this.baseURL}/create`, patient)
+  }
 }

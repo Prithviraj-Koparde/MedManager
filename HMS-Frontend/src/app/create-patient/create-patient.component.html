@@ -1,0 +1,134 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+    <a class="navbar-brand fw-bold d-flex align-items-center" routerLink="/admin-dash">
+        🏥 <span class="ms-2">MedManager</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link fw-semibold" routerLink="/doc-dash">
+                    ↩ Go Back
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <!-- CARD -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white text-center">
+                    <h4 class="mb-0">➕ Add New Patient</h4>
+                </div>
+
+                <div class="card-body">
+                    <form #patientForm="ngForm" (ngSubmit)="onSubmit()">
+
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" name="name" [(ngModel)]="patient.name"
+                                placeholder="Enter patient name" required>
+                        </div>
+
+                        <!-- Contact Number -->
+                        <div class="mb-3">
+                            <label class="form-label">Contact Number</label>
+                            <input type="text" class="form-control" name="contactNumber"
+                                [(ngModel)]="patient.contactNumber" placeholder="Enter contact number"
+                                pattern="[6-9][0-9]{9}" required>
+                        </div>
+
+                        <!-- Age -->
+                        <div class="mb-3">
+                            <label class="form-label">Age</label>
+                            <input type="number" class="form-control" name="age" [(ngModel)]="patient.age" min="0"
+                                required>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="form-select" name="gender" [(ngModel)]="patient.gender" required>
+                                <option value="" disabled selected>Select gender</option>
+                                <option value="MALE">Male</option>
+                                <option value="FEMALE">Female</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Blood Group -->
+                        <div class="mb-3">
+                            <label class="form-label">Blood Group</label>
+                            <select class="form-select" name="bloodGroup" [(ngModel)]="patient.bloodGroup" required>
+                                <option value="" disabled selected>Select blood group</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                            </select>
+                        </div>
+
+                        <!-- Dose -->
+                        <div class="mb-3">
+                            <label class="form-label">Dose</label>
+                            <input type="text" class="form-control" name="dose" [(ngModel)]="patient.dose"
+                                placeholder="Enter dosage" required>
+                        </div>
+
+                        <!-- Prescription -->
+                        <div class="mb-3">
+                            <label class="form-label">Prescription</label>
+                            <textarea class="form-control" rows="3" name="prescription"
+                                [(ngModel)]="patient.prescription" placeholder="Enter prescription details"
+                                required></textarea>
+                        </div>
+
+                        <!-- Urgency -->
+                        <div class="mb-3">
+                            <label class="form-label">Urgency</label>
+                            <select class="form-select" name="urgency" [(ngModel)]="patient.urgency" required>
+                                <option value="" disabled selected>Select urgency</option>
+                                <option value="HIGH">High</option>
+                                <option value="MEDIUM">Medium</option>
+                                <option value="LOW">Low</option>
+                            </select>
+                        </div>
+
+                        <!-- Fees -->
+                        <div class="mb-3">
+                            <label class="form-label">Fees (₹)</label>
+                            <input type="number" class="form-control" name="fees" [(ngModel)]="patient.fees" min="0"
+                                placeholder="Enter consultation fees" required>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success" [disabled]="patientForm.invalid">
+                                Save Patient
+                            </button>
+
+                            <button type="button" class="btn btn-secondary" (click)="goToDocDash()">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
