@@ -7,4 +7,5 @@ import java.util.List;
 public interface PatService {
     PatientDTO insertPatient (PatientDTO patientDTO);
     List<PatientDTO> getAllPatients ();
+    void deletePatientById(Long id);
 }

@@ -20,15 +20,20 @@ public class PatientController {
     private PatService patService;
 
     @PostMapping("create")
-    public ResponseEntity<PatientDTO> createPatient(@Valid @RequestBody PatientDTO patientDTO){
+    public ResponseEntity<PatientDTO> createPatient(@Valid @RequestBody PatientDTO patientDTO) {
         return new ResponseEntity<>(patService.insertPatient(patientDTO), HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<PatientDTO>> getAllPatients(){
+    public ResponseEntity<List<PatientDTO>> getAllPatients() {
         List<PatientDTO> patientDTOs = patService.getAllPatients();
         return ResponseEntity.ok(patientDTOs);
     }
 
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deletePatientById(@PathVariable Long id) {
+        patService.deletePatientById(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }
