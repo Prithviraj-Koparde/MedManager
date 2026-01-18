@@ -50,13 +50,11 @@
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Contact</th>
           <th>Age</th>
           <th>Gender</th>
-          <th>Blood</th>
-          <th>Dose</th>
-          <th>Prescription</th>
           <th>Urgency</th>
+          <th>Contact</th>
+          <th>Fees</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -65,12 +63,8 @@
         <tr *ngFor="let patient of patients">
           <td>{{ patient.id }}</td>
           <td class="fw-semibold">{{ patient.name }}</td>
-          <td>{{ patient.contactNumber }}</td>
           <td>{{ patient.age }}</td>
           <td>{{ patient.gender }}</td>
-          <td>{{ patient.bloodGroup }}</td>
-          <td>{{ patient.dose }}</td>
-          <td>{{ patient.prescription }}</td>
           <td>
             <span class="badge" [ngClass]="{
                 'bg-danger': patient.urgency === 'HIGH',
@@ -80,6 +74,8 @@
               {{ patient.urgency }}
             </span>
           </td>
+          <td>{{ patient.contactNumber }}</td>
+          <td>{{patient.fees}}</td>
           <td>
             <button (click)="deletePatientById(patient.id)" class="btn btn-danger">Delete</button>
           </td>
