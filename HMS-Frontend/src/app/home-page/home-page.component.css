@@ -1,0 +1,23 @@
+/* Page background – same as dashboards */
+:host {
+  display: block;
+  background-color: #f8f9fa; /* soft light grey */
+  min-height: 100vh;
+}
+
+/* Hero section tweak */
+.hero-section,
+.bg-dark {
+  background-color: #212529 !important; /* consistent dark */
+}
+
+/* Card hover polish (optional but nice) */
+.card {
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}

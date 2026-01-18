@@ -1,0 +1,136 @@
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      🏥 MedManager Healthcare
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item">
+          <a class="btn btn-outline-light btn-sm" routerLink="/doclogin">
+            👨‍⚕️ Doctor Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-danger btn-sm" routerLink="/adlogin">
+            🔐 Admin Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="bg-dark text-white">
+  <div class="container-fluid py-5 px-5">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6 text-center text-md-start">
+        <h1 class="fw-bold">Welcome to MedManager Healthcare</h1>
+        <p class="lead">
+          Smart hospital management with compassionate care.
+        </p>
+
+        <div class="d-flex gap-2 flex-wrap justify-content-center justify-content-md-start">
+          <span class="badge bg-danger">10,000+ Healing Hands</span>
+          <span class="badge bg-primary">Advanced Treatment</span>
+          <span class="badge bg-success">Best Outcomes</span>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <img
+          src="assets/hero.jpg"
+          class="img-fluid rounded shadow"
+          alt="Hospital">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="container-fluid py-5" style="background:#f8f9fa">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Why Choose MedManager?</h2>
+    <p class="text-muted">Technology-driven care you can trust</p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card h-100 shadow-sm">
+        <img src="assets/doctors.png" class="card-img-top" alt="Doctors">
+        <div class="card-body">
+          <h6 class="fw-semibold">Expert Doctors</h6>
+          <p class="small text-muted">
+            Highly qualified specialists delivering compassionate care.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card h-100 shadow-sm">
+        <img src="assets/emergency.jpg" class="card-img-top" alt="Emergency">
+        <div class="card-body">
+          <h6 class="fw-semibold">Emergency Care</h6>
+          <p class="small text-muted">
+            Rapid response systems when every second matters.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card h-100 shadow-sm">
+        <img src="assets/heart.png" class="card-img-top" alt="Heart Care">
+        <div class="card-body">
+          <h6 class="fw-semibold">Heart Institute</h6>
+          <p class="small text-muted">
+            Advanced cardiology and cardiac surgery facilities.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card h-100 shadow-sm">
+        <img src="assets/ambulance.png" class="card-img-top" alt="Ambulance">
+        <div class="card-body">
+          <h6 class="fw-semibold">24×7 Ambulance</h6>
+          <p class="small text-muted">
+            Emergency ambulance service — dial <b>1066</b>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="bg-light py-5">
+  <div class="container text-center">
+    <h3 class="fw-bold">Book Appointments. Manage Care. Save Lives.</h3>
+    <p class="text-muted">
+      MedManager simplifies hospital workflows while focusing on patient care.
+    </p>
+
+    <a routerLink="/appointment-dash" class="btn btn-success btn-lg">
+      📅 Book an Appointment
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-1">📞 Contact: 1860 344 5454</p>
+  <small>© 2025–2026 MedManager Healthcare</small>
+</footer>

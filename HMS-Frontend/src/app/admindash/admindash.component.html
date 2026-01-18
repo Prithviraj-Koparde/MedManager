@@ -57,6 +57,7 @@
           <th>Dose</th>
           <th>Prescription</th>
           <th>Urgency</th>
+          <th>Action</th>
         </tr>
       </thead>
 
@@ -78,6 +79,9 @@
               }">
               {{ patient.urgency }}
             </span>
+          </td>
+          <td>
+            <button (click)="deletePatientById(patient.id)" class="btn btn-danger">Delete</button>
           </td>
         </tr>
       </tbody>
