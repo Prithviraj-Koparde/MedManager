@@ -42,16 +42,34 @@ public class PatServiceIMPL implements PatService {
 
     @Override
     public PatientDTO updatePatientById(PatientDTO patientDTO) {
-        if (!patientRepository.existsById(patientDTO.getId())) {
+        Patient patient = patientRepository.findById(patientDTO.getId())
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Patient not found with id " + patientDTO.getId()
+                ));
+
+        patient.setName(patientDTO.getName());
+        patient.setContactNumber(patientDTO.getContactNumber());
+        patient.setAge(patientDTO.getAge());
+        patient.setGender(patientDTO.getGender());
+        patient.setBloodGroup(patientDTO.getBloodGroup());
+        patient.setDose(patientDTO.getDose());
+        patient.setPrescription(patientDTO.getPrescription());
+        patient.setUrgency(patientDTO.getUrgency());
+        patient.setFees(patientDTO.getFees());
+
+        return PatientMapper.mapToPatientDTO(patientRepository.save(patient));
+    }
+
+    @Override
+    public PatientDTO getPatientById(Long id) {
+        if (!patientRepository.existsById(id)){
             throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
-                    "Patient not found with id " + patientDTO.getId()
+                    HttpStatus.NOT_FOUND, "Patient with id not found" + " " + id
             );
         }
-
-        Patient patient = PatientMapper.mapToPatient(patientDTO);
-        Patient updatedPatient = patientRepository.save(patient);
-        return PatientMapper.mapToPatientDTO(updatedPatient);
+        Patient patient = patientRepository.getReferenceById(id);
+        return PatientMapper.mapToPatientDTO(patient);
     }
 
 

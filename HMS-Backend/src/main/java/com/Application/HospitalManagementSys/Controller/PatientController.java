@@ -49,4 +49,10 @@ public class PatientController {
         return ResponseEntity.ok(patService.updatePatientById(patientDTO));
     }
 
+
+    @GetMapping("{id}")
+    public ResponseEntity<PatientDTO> getPatientById(@PathVariable Long id){
+        PatientDTO patientDTO = patService.getPatientById(id);
+        return ResponseEntity.ok(patientDTO);
+    }
 }
