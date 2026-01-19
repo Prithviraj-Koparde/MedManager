@@ -1,6 +1,8 @@
 package com.Application.HospitalManagementSys.Service.IMPL;
 
 import com.Application.HospitalManagementSys.DataTransferObject.PatientDTO;
+import com.Application.HospitalManagementSys.ENUM.Gender;
+import com.Application.HospitalManagementSys.ENUM.Urgency;
 import com.Application.HospitalManagementSys.Entity.Patient;
 import com.Application.HospitalManagementSys.Mapper.PatientMapper;
 import com.Application.HospitalManagementSys.Repo.PatientRepository;
@@ -37,5 +39,20 @@ public class PatServiceIMPL implements PatService {
         }
         patientRepository.deleteById(id);
     }
+
+    @Override
+    public PatientDTO updatePatientById(PatientDTO patientDTO) {
+        if (!patientRepository.existsById(patientDTO.getId())) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND,
+                    "Patient not found with id " + patientDTO.getId()
+            );
+        }
+
+        Patient patient = PatientMapper.mapToPatient(patientDTO);
+        Patient updatedPatient = patientRepository.save(patient);
+        return PatientMapper.mapToPatientDTO(updatedPatient);
+    }
+
 
 }

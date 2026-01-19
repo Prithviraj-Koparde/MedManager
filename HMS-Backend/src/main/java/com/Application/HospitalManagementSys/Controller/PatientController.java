@@ -1,6 +1,9 @@
 package com.Application.HospitalManagementSys.Controller;
 
 import com.Application.HospitalManagementSys.DataTransferObject.PatientDTO;
+import com.Application.HospitalManagementSys.ENUM.Gender;
+import com.Application.HospitalManagementSys.ENUM.Urgency;
+import com.Application.HospitalManagementSys.Entity.Patient;
 import com.Application.HospitalManagementSys.Repo.PatientRepository;
 import com.Application.HospitalManagementSys.Service.PatService;
 import jakarta.validation.Valid;
@@ -34,6 +37,16 @@ public class PatientController {
     public ResponseEntity<String> deletePatientById(@PathVariable Long id) {
         patService.deletePatientById(id);
         return ResponseEntity.noContent().build();
+    }
+
+
+    @PutMapping("{id}")
+    public ResponseEntity<PatientDTO> updatePatient(
+            @PathVariable Long id,
+            @RequestBody PatientDTO patientDTO
+    ) {
+        patientDTO.setId(id);
+        return ResponseEntity.ok(patService.updatePatientById(patientDTO));
     }
 
 }
