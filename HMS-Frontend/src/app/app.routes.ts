@@ -7,6 +7,7 @@ import { DoctorDashComponent } from './doctor-dash/doctor-dash.component';
 import { CreatePatientComponent } from './create-patient/create-patient.component';
 import { MedicineDashComponent } from './medicine-dash/medicine-dash.component';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
 
 export const routes: Routes = [
     { path: 'admin-dash', component: AdmindashComponent },
@@ -17,5 +18,6 @@ export const routes: Routes = [
     { path: 'doc-dash', component: DoctorDashComponent },
     { path: 'add-patient-dash', component: CreatePatientComponent },
     { path: 'med-dash', component: MedicineDashComponent },
-    { path: 'add-medicine-dash', component: AddMedicineComponent }
+    { path: 'add-medicine-dash', component: AddMedicineComponent },
+    { path: 'update-patient/:id', component: UpdatePatientComponent } // to go in patient with its id
 ];

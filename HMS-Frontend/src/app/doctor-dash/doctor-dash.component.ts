@@ -3,7 +3,7 @@ import { PatientService } from '../patient.service';
 import { Patient } from '../patient';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-dash',
@@ -12,7 +12,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './doctor-dash.component.css'
 })
 export class DoctorDashComponent {
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService, private router: Router) { }
   ngOnInit(): void {
     this.docGetAllPatients()
   }
@@ -31,5 +31,9 @@ export class DoctorDashComponent {
       console.log(data)
       this.docGetAllPatients()
     })
+  }
+
+  update(id:number){
+    this.router.navigate(['update-patient',id])
   }
 }

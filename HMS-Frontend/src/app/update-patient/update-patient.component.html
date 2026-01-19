@@ -11,9 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
             <li class="nav-item">
-                <a class="nav-link fw-semibold" routerLink="/doc-dash">
-                    ↩ Go Back
-                </a>
+                <a class="nav-link fw-semibold" routerLink="/doc-dash">↩ Go Back</a>
             </li>
         </ul>
     </div>
@@ -24,10 +22,9 @@
     <div class="row justify-content-center">
         <div class="col-md-7">
 
-            <!-- CARD -->
             <div class="card shadow-sm">
                 <div class="card-header bg-dark text-white text-center">
-                    <h4 class="mb-0">➕ Add New Patient</h4>
+                    <h4 class="mb-0">✏️ Update Patient</h4>
                 </div>
 
                 <div class="card-body">
@@ -37,29 +34,29 @@
                         <div class="mb-3">
                             <label class="form-label">Patient Name</label>
                             <input type="text" class="form-control" name="name" [(ngModel)]="patient.name"
-                                placeholder="Enter patient name" required>
+                            placeholder="Enter patient name" required>
                         </div>
 
                         <!-- Contact Number -->
                         <div class="mb-3">
                             <label class="form-label">Contact Number</label>
                             <input type="text" class="form-control" name="contactNumber"
-                                [(ngModel)]="patient.contactNumber" placeholder="Enter contact number"
-                                pattern="[6-9][0-9]{9}" required>
+                                [(ngModel)]="patient.contactNumber" pattern="[6-9][0-9]{9}"
+                                placeholder="Enter contact number" required>
                         </div>
 
                         <!-- Age -->
                         <div class="mb-3">
                             <label class="form-label">Age</label>
                             <input type="number" class="form-control" name="age" [(ngModel)]="patient.age" min="0"
-                               placeholder="Enter age" required>
+                             placeholder="Enter age"   required>
                         </div>
 
                         <!-- Gender -->
                         <div class="mb-3">
                             <label class="form-label">Gender</label>
                             <select class="form-select" name="gender" [(ngModel)]="patient.gender" required>
-                                <option value="" disabled selected>Select gender</option>
+                                <option value="" disabled>Select gender</option>
                                 <option value="MALE">Male</option>
                                 <option value="FEMALE">Female</option>
                                 <option value="OTHER">Other</option>
@@ -70,7 +67,7 @@
                         <div class="mb-3">
                             <label class="form-label">Blood Group</label>
                             <select class="form-select" name="bloodGroup" [(ngModel)]="patient.bloodGroup" required>
-                                <option value="" disabled selected>Select blood group</option>
+                                <option value="" disabled>Select blood group</option>
                                 <option>A+</option>
                                 <option>A-</option>
                                 <option>B+</option>
@@ -86,22 +83,21 @@
                         <div class="mb-3">
                             <label class="form-label">Dose</label>
                             <input type="text" class="form-control" name="dose" [(ngModel)]="patient.dose"
-                                placeholder="Enter dosage" required>
+                            placeholder="Enter dose" required>
                         </div>
 
                         <!-- Prescription -->
                         <div class="mb-3">
                             <label class="form-label">Prescription</label>
                             <textarea class="form-control" rows="3" name="prescription"
-                                [(ngModel)]="patient.prescription" placeholder="Enter prescription details"
-                                required></textarea>
+                                [(ngModel)]="patient.prescription" placeholder="Enter prescription" required></textarea>
                         </div>
 
                         <!-- Urgency -->
                         <div class="mb-3">
                             <label class="form-label">Urgency</label>
                             <select class="form-select" name="urgency" [(ngModel)]="patient.urgency" required>
-                                <option value="" disabled selected>Select urgency</option>
+                                <option value="" disabled>Select urgency</option>
                                 <option value="HIGH">High</option>
                                 <option value="MEDIUM">Medium</option>
                                 <option value="LOW">Low</option>
@@ -112,13 +108,13 @@
                         <div class="mb-3">
                             <label class="form-label">Fees (₹)</label>
                             <input type="number" class="form-control" name="fees" [(ngModel)]="patient.fees" min="0"
-                                placeholder="Enter consultation fees" required>
+                              placeholder="Enter fees"  required>
                         </div>
 
                         <!-- Buttons -->
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-success" [disabled]="patientForm.invalid">
-                                Save Patient
+                                Update Patient
                             </button>
 
                             <button type="button" class="btn btn-secondary" (click)="goToDocDash()">
@@ -129,6 +125,7 @@
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
