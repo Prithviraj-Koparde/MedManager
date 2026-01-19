@@ -21,4 +21,9 @@ public class Medicine {
 
     @Column(name = "stock")
     private Integer  stock;
+
+    public Medicine(String drugName, Integer stock) {
+        this.drugName = drugName;
+        this.stock = stock;
+    }
 }

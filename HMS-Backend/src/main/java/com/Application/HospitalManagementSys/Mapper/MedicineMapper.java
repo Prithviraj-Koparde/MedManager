@@ -7,7 +7,6 @@ public class MedicineMapper {
     public static Medicine mapToMedicine(MedicineDTO medicineDTO) {
 
         Medicine medicine = new Medicine(
-                medicineDTO.getId(),
                 medicineDTO.getDrugName(),
                 medicineDTO.getStock()
         );
