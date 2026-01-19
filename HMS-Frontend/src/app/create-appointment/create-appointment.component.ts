@@ -22,11 +22,11 @@ export class CreateAppointmentComponent {
   saveAppointment() {
     this.appointmentService.saveNewAppointment(this.appointment).subscribe(data => {
       console.log(data);
-      this.goToAppointment()
+      this.goToAppointmentList()
     })
   }
 
-  goToAppointment(){
+  goToAppointmentList(){
     this.router.navigate(['/appointment-dash'])
   }
 }

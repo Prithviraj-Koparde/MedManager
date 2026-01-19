@@ -16,6 +16,10 @@ export class MedicineService {
     return this.httpClient.get<Medicine[]>(`${this.baseUrl}`)
   }
 
+  saveNewMedicine(medicine: Medicine): Observable<Medicine> {
+    return this.httpClient.post<Medicine>(`${this.baseUrl}/create`, medicine)
+  }
+
   deleteMedicineById(id: number): Observable<object> {
     return this.httpClient.delete(`${this.baseUrl}/${id}`)
   }
