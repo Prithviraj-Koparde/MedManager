@@ -37,4 +37,5 @@ public class PatServiceIMPL implements PatService {
         }
         patientRepository.deleteById(id);
     }
+
 }

@@ -20,5 +20,5 @@ public class Medicine {
     private String drugName;
 
     @Column(name = "stock")
-    private String  stock;
+    private Integer  stock;
 }
