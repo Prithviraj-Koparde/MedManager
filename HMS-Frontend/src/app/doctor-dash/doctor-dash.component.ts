@@ -36,4 +36,8 @@ export class DoctorDashComponent {
   update(id:number){
     this.router.navigate(['update-patient',id])
   }
+
+  viewPatientById(id:number){
+    this.router.navigate(['patient-card',id])
+  }
 }

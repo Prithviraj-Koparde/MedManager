@@ -64,7 +64,9 @@
                     <td>{{ medicine.id }}</td>
                     <td class="fw-semibold">{{ medicine.drugName }}</td>
                     <td>{{ medicine.stock }}</td>
-                    <td>
+                    <td class="d-flex gap-2 justify-content-center">
+                        <button (click)="updateMedicineById(medicine.id)" class="btn btn-success">Update</button>
+
                         <button (click)="deleteMedicineById(medicine.id)" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>

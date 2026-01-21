@@ -1,0 +1,103 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        🏥 <span class="ms-2">MedManager</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active fw-semibold" routerLinkActive="active" routerLink="/doc-dash">
+                    ↩ Back
+                </a>
+            </li>
+        </ul>
+
+        <div class="d-flex gap-2">
+            <a routerLinkActive="active" routerLink="/home-page" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container mt-4 d-flex justify-content-center">
+  <div class="col-md-6 col-lg-5">
+
+    <div class="card shadow-sm">
+      <!-- HEADER -->
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h6 class="mb-0">🧑‍⚕️ Patient Details</h6>
+        <span class="badge bg-secondary">ID: {{ patient.id }}</span>
+      </div>
+
+      <!-- BODY -->
+      <div class="card-body">
+
+        <!-- NAME -->
+        <div class="text-center mb-3">
+          <h5 class="fw-bold mb-1">{{ patient.name }}</h5>
+          <span class="text-muted">{{ patient.gender }} · {{ patient.age }} yrs</span>
+        </div>
+
+        <hr>
+
+        <!-- GRID -->
+        <div class="row g-3">
+
+          <div class="col-6">
+            <div class="detail-label">Contact</div>
+            <div class="detail-value">{{ patient.contactNumber }}</div>
+          </div>
+
+          <div class="col-6">
+            <div class="detail-label">Blood Group</div>
+            <div class="detail-value">{{ patient.bloodGroup }}</div>
+          </div>
+
+          <div class="col-6">
+            <div class="detail-label">Dose</div>
+            <div class="detail-value">{{ patient.dose }}</div>
+          </div>
+
+          <div class="col-6">
+            <div class="detail-label">Fees</div>
+            <div class="detail-value">₹ {{ patient.fees }}</div>
+          </div>
+
+          <div class="col-12">
+            <div class="detail-label">Prescription</div>
+            <div class="detail-value">{{ patient.prescription }}</div>
+          </div>
+
+          <div class="col-12 text-center mt-2">
+            <span class="badge px-3 py-2"
+              [ngClass]="{
+                'bg-danger': patient.urgency === 'HIGH',
+                'bg-warning text-dark': patient.urgency === 'MEDIUM',
+                'bg-success': patient.urgency === 'LOW'
+              }">
+              {{ patient.urgency }} URGENCY
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <div class="card-footer text-center d-flex justify-content-center gap-3">
+        <button class="btn btn-secondary btn-sm" (click)="goBack()">
+          ↩ Back
+        </button>
+        <button class="btn btn-danger btn-sm" (click)="deletePatientCardById(patient.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

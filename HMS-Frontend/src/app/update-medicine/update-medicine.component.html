@@ -1,0 +1,64 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+    <a class="navbar-brand fw-bold d-flex align-items-center" routerLink="/admin-dash">
+        🏥 <span class="ms-2">MedManager</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link fw-semibold" routerLink="/med-dash">↩ Go Back</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white text-center">
+                    <h4 class="mb-0">✏️ Medicine Name</h4>
+                </div>
+
+                <div class="card-body">
+                    <form #medicineForm="ngForm" (ngSubmit)="onSubmit()">
+
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" name="drugName" [(ngModel)]="medicine.drugName"
+                                placeholder="Enter patient name" required>
+                        </div>
+
+
+                        <!-- Stock -->
+                        <div class="mb-3">
+                            <label class="form-label">Stock</label>
+                            <input type="number" class="form-control" name="stock" [(ngModel)]="medicine.stock" min="0"
+                                placeholder="Enter stock" required>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success" [disabled]="medicineForm.invalid">
+                                Update Patient
+                            </button>
+
+                            <button type="button" class="btn btn-secondary" (click)="goToMedicineList()">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

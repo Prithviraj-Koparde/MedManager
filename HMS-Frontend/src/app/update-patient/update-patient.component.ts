@@ -21,7 +21,7 @@ export class UpdatePatientComponent {
     this.patientService.getPatientById(this.id).subscribe(data => {
       this.patient = data
     })
-  }
+  } 
   onSubmit() {
     this.patientService.updatePatientById(this.id, this.patient).subscribe(data => {
       console.log(data)
@@ -32,4 +32,5 @@ export class UpdatePatientComponent {
   goToDocDash() {
     this.router.navigate(['doc-dash'])
   }
+
 }

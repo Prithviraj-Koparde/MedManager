@@ -79,6 +79,7 @@
                         </span>
                     </td>
                     <td class="d-flex gap-2 justify-content-center">
+                        <button (click)="viewPatientById(patient.id)" class="btn btn-primary btn-sm">View</button>
                         <button (click)="update(patient.id)" class="btn btn-success btn-sm">Update</button>
                         <button (click)="deletePatientById(patient.id)" class="btn btn-danger btn-sm">Delete</button>
                     </td>

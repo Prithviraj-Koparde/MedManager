@@ -29,7 +29,7 @@ export class PatientService {
     return this.httpClient.put(`${this.baseURL}/${id}`, patient)
   }
 
-  getPatientById(id:number):Observable<Patient>{
+  getPatientById(id: number): Observable<Patient> {
     return this.httpClient.get<Patient>(`${this.baseURL}/${id}`)
   }
 }

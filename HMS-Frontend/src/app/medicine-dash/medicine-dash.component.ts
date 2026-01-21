@@ -3,7 +3,7 @@ import { MedicineService } from '../medicine.service';
 import { Medicine } from '../medicine';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-medicine-dash',
@@ -13,9 +13,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class MedicineDashComponent {
   medicines: Medicine[] = []
-  constructor(private medicineService: MedicineService) { }
+  constructor(private medicineService: MedicineService, private router: Router) { }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.getAllMedicines()
   }
 
@@ -31,5 +31,9 @@ export class MedicineDashComponent {
       this.getAllMedicines()
       console.log(data)
     })
+  }
+
+  updateMedicineById(id: number) {
+    this.router.navigate(['update-medicine', id])
   }
 }
