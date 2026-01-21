@@ -39,4 +39,31 @@ public class MedServiceIMPL implements MedService {
         }
         medicineRepository.deleteById(id);
     }
+
+    @Override
+    public MedicineDTO updateMedicineById(MedicineDTO medicineDTO) {
+        Medicine medicine = medicineRepository.findById(medicineDTO.getId())
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Medicine not found with id" + " " + medicineDTO.getId()
+                ));
+
+        medicine.setDrugName(medicineDTO.getDrugName());
+        medicine.setStock(medicineDTO.getStock());
+
+        return MedicineMapper.mapToMedicineDTO(medicineRepository.save(medicine));
+    }
+
+    @Override
+    public MedicineDTO getMedicineById(Long id) {
+        if (!medicineRepository.existsById(id)) {
+            throw new ResponseStatusException(
+                    HttpStatus.NOT_FOUND, "Medicine with id not found!" + " " + id
+            );
+        }
+        Medicine medicine = medicineRepository.getReferenceById(id);
+        return MedicineMapper.mapToMedicineDTO(medicine);
+    }
+
+
 }

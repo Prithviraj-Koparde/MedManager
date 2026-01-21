@@ -6,6 +6,12 @@ import java.util.List;
 
 public interface MedService {
     MedicineDTO insertMedicine(MedicineDTO medicineDTO);
+
     List<MedicineDTO> getAllMedicine();
+
     void deleteMedicineById(Long id);
+
+    MedicineDTO updateMedicineById(MedicineDTO medicineDTO);
+
+    MedicineDTO getMedicineById(Long id);
 }

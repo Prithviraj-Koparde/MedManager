@@ -29,8 +29,23 @@ public class MedicineController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteMedicineById(@PathVariable Long id){
+    public ResponseEntity<String> deleteMedicineById(@PathVariable Long id) {
         medService.deleteMedicineById(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<MedicineDTO> updateMedicineById(
+            @PathVariable Long id,
+            @RequestBody MedicineDTO medicineDTO
+    ) {
+        medicineDTO.setId(id);
+        return ResponseEntity.ok(medService.updateMedicineById(medicineDTO));
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity<MedicineDTO> getMedicineById(@PathVariable Long id) {
+        MedicineDTO medicineDTO = medService.getMedicineById(id);
+        return ResponseEntity.ok(medicineDTO);
     }
 }
