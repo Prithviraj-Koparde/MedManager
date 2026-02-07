@@ -10,6 +10,8 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { ViewPatientCardComponent } from './view-patient-card/view-patient-card.component';
 import { UpdateMedicineComponent } from './update-medicine/update-medicine.component';
+import { DocLoginComponent } from './doc-login/doc-login.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 export const routes: Routes = [
     { path: 'admin-dash', component: AdmindashComponent },
@@ -23,5 +25,7 @@ export const routes: Routes = [
     { path: 'add-medicine-dash', component: AddMedicineComponent },
     { path: 'update-patient/:id', component: UpdatePatientComponent }, // to go in patient with its id
     { path: 'patient-card/:id', component: ViewPatientCardComponent },
-    { path: 'update-medicine/:id', component: UpdateMedicineComponent } // to go in medicine with its id
+    { path: 'update-medicine/:id', component: UpdateMedicineComponent }, // to go in medicine with its id
+    { path: 'doc-login', component: DocLoginComponent },
+    { path: 'admin-login', component: AdminLoginComponent }
 ];
