@@ -4,6 +4,7 @@ import { Patient } from '../patient';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { authService } from '../auth.service';
 
 @Component({
   selector: 'app-doctor-dash',
@@ -12,7 +13,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './doctor-dash.component.css'
 })
 export class DoctorDashComponent {
-  constructor(private patientService: PatientService, private router: Router) { }
+  constructor(private patientService: PatientService, private authService:authService, private router: Router) { }
   ngOnInit(): void {
     this.docGetAllPatients()
   }
@@ -39,5 +40,10 @@ export class DoctorDashComponent {
 
   viewPatientById(id:number){
     this.router.navigate(['patient-card',id])
+  }
+
+  logOut(){
+    this.authService.logOut()
+    this.router.navigate(['home-page'])
   }
 }
