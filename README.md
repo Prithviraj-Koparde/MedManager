@@ -42,29 +42,29 @@ The project focuses on clean architecture, real-world workflows, and scalable de
 🛠️ Tech Stack
 1. Backend
 
-  a. Java
-  
-  b. Spring Boot
-  
-  c. Spring Data JPA
-  
-  d. Hibernate
-  
-  e. PostgreSQL
-  
-  f. Maven
+      a. Java
+      
+      b. Spring Boot
+      
+      c. Spring Data JPA
+      
+      d. Hibernate
+      
+      e. PostgreSQL
+      
+      f. Maven
 
 3. Frontend
    
-  a. Angular
-  
-  b. TypeScript
-  
-  c. Bootstrap
-  
-  d. RxJS
-  
-  e. HTML / CSS
+      a. Angular
+      
+      b. TypeScript
+      
+      c. Bootstrap
+      
+      d. RxJS
+      
+      e. HTML / CSS
 
 📁 Project Architecture
 
