@@ -19,15 +19,18 @@ The project focuses on clean architecture, real-world workflows, and scalable de
   3. Server-side pagination integrated with backend
   4. Responsive UI using Bootstrap
   5. Separate dashboards for:
+     
      a. Admin
+     
      b. Doctor
-  6. Read-only and update views for Patients and Medicines
-  7. Clean and protected routing with Angular Router
+  7. Read-only and update views for Patients and Medicines
+  8. Clean and protected routing with Angular Router
 
 🔐 Authentication (Current Implementation)
   1. Basic login functionality without JWT
   2. Doctor and Admin login credentials are hardcoded (for learning/demo purposes)
     Used to demonstrate:
+
     a. Role-based navigation
     b. Secure route planning (conceptually)
 
