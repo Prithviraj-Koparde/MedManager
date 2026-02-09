@@ -4,6 +4,7 @@ import com.Application.HospitalManagementSys.DataTransferObject.MedicineDTO;
 import com.Application.HospitalManagementSys.Service.MedService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,11 +23,16 @@ public class MedicineController {
         return new ResponseEntity<>(medService.insertMedicine(medicineDTO), HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public ResponseEntity<List<MedicineDTO>> getAllMedicines() {
-        List<MedicineDTO> medicineDTOS = medService.getAllMedicine();
-        return ResponseEntity.ok(medicineDTOS);
+    @PostMapping
+    public ResponseEntity<List<MedicineDTO>> saveAllMedicines(@Valid @RequestBody List<MedicineDTO> medicineDTOList) {
+        return new ResponseEntity<>(medService.saveAllMedicines(medicineDTOList), HttpStatus.OK);
     }
+
+//    @GetMapping
+//    public ResponseEntity<List<MedicineDTO>> getAllMedicines() {
+//        List<MedicineDTO> medicineDTOS = medService.getAllMedicine();
+//        return ResponseEntity.ok(medicineDTOS);
+//    }
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteMedicineById(@PathVariable Long id) {
@@ -47,5 +53,13 @@ public class MedicineController {
     public ResponseEntity<MedicineDTO> getMedicineById(@PathVariable Long id) {
         MedicineDTO medicineDTO = medService.getMedicineById(id);
         return ResponseEntity.ok(medicineDTO);
+    }
+
+    // Pagination
+    @GetMapping
+    public ResponseEntity<Page<MedicineDTO>> getAllMedicines(@RequestParam(required = false, defaultValue = "0") int page,
+                                                             @RequestParam(required = false, defaultValue = "10") int pgSize) {
+        Page<MedicineDTO> medicines = medService.getAllMedicines(page, pgSize);
+        return new ResponseEntity<>(medicines, HttpStatus.OK);
     }
 }
