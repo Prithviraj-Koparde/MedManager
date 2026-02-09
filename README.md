@@ -70,19 +70,19 @@ The project focuses on clean architecture, real-world workflows, and scalable de
 
 
 🔮 Future Enhancements (Planned)
-  🔍 Search & filtering (patients, medicines)
-  
-  🔐 JWT-based authentication & authorization
-  
-  👨‍⚕️ Multiple doctors with doctor-specific data access
-  
-  🔄 Refresh-token based session handling
-  
-  📈 Sorting combined with pagination
-  
-  🧪 Unit & integration testing
-  
-  🌐 Deployment (Docker / Cloud)
+    🔍 Search & filtering (patients, medicines)
+    
+    🔐 JWT-based authentication & authorization
+    
+    👨‍⚕️ Multiple doctors with doctor-specific data access
+    
+    🔄 Refresh-token based session handling
+    
+    📈 Sorting combined with pagination
+    
+    🧪 Unit & integration testing
+    
+    🌐 Deployment (Docker / Cloud)
 
 🎯 Learning Outcome
   1. This project demonstrates hands-on experience with:
