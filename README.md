@@ -4,6 +4,7 @@ MedManager is a full-stack hospital management application built using Spring Bo
 The project focuses on clean architecture, real-world workflows, and scalable design patterns commonly used in enterprise Java applications.
 
 🚀 Key Features
+
 🔹 Backend (Spring Boot)
   1. RESTful APIs using Controller → Service → Repository layered architecture
   2. DTO pattern to decouple API contracts from database entities
@@ -29,6 +30,7 @@ The project focuses on clean architecture, real-world workflows, and scalable de
     Used to demonstrate:
     a. Role-based navigation
     b. Secure route planning (conceptually)
+
 ⚠️ This is intentional for learning phase and will be improved in future scope.
 
 📊 Pagination Support
@@ -39,18 +41,29 @@ The project focuses on clean architecture, real-world workflows, and scalable de
 
 🛠️ Tech Stack
 1. Backend
+
   a. Java
+  
   b. Spring Boot
+  
   c. Spring Data JPA
+  
   d. Hibernate
+  
   e. PostgreSQL
+  
   f. Maven
 
-2. Frontend
+3. Frontend
+   
   a. Angular
+  
   b. TypeScript
+  
   c. Bootstrap
+  
   d. RxJS
+  
   e. HTML / CSS
 
 📁 Project Architecture
