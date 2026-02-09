@@ -72,5 +72,21 @@
                 </tr>
             </tbody>
         </table>
+        <!-- PAGINATION -->
+        <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+
+            <button class="btn btn-outline-secondary btn-sm px-4" (click)="prevPage()" [disabled]="currentPage === 0">
+                ⬅ Prev
+            </button>
+
+            <span class="fw-semibold text-muted">
+                Page {{ currentPage + 1 }} of {{ totalPages }}
+            </span>
+
+            <button class="btn btn-outline-secondary btn-sm px-4" (click)="nextPage()"
+                [disabled]="currentPage === totalPages - 1">
+                Next ➡
+            </button>
+        </div>
     </div>
 </div>
