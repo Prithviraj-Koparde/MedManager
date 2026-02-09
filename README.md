@@ -92,8 +92,8 @@ The project focuses on clean architecture, real-world workflows, and scalable de
   5. Clean coding practices and scalability considerations
 
 👨‍💻 Author
-  Prithviraj Koparde
-  
-  Java Backend Developer
-  
-  Actively building production-grade full-stack applications
+    Prithviraj Koparde
+    
+    Java Backend Developer
+    
+    Actively building production-grade full-stack applications
