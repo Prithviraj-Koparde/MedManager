@@ -26,10 +26,16 @@ export class MedicineService {
   }
 
   updateMedicineById(id: number, medicine: Medicine): Observable<object> {
-    return this.httpClient.put(`${this.baseUrl}/${id}`, medicine) 
+    return this.httpClient.put(`${this.baseUrl}/${id}`, medicine)
   }
 
   getMedicineById(id: number): Observable<Medicine> {
     return this.httpClient.get<Medicine>(`${this.baseUrl}/${id}`)
+  }
+
+
+  // pagination service logic
+  getMedicinesList(page: number, pgSize: number): Observable<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}?page=${page}&pgSize${pgSize}`)
   }
 }
