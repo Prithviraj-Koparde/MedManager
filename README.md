@@ -65,9 +65,7 @@ The project focuses on clean architecture, real-world workflows, and scalable de
       
       c. Bootstrap
       
-      d. RxJS
-      
-      e. HTML / CSS
+      d. HTML / CSS
 
 📁 Project Architecture
 
